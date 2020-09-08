@@ -1,7 +1,9 @@
 import React from 'react'
 import '../css/project_card2.css'
+import Slide from 'react-reveal/Slide'
 function project_card2({title, desc, img_path, tech_used, link}) {
     return (
+        <Slide right duration={500}>
         <div className="project_card2">
             <div className="content">
                 <p className="card_title">{title}</p>
@@ -22,6 +24,7 @@ function project_card2({title, desc, img_path, tech_used, link}) {
                 <div className="img_lay"></div>
             </div>
         </div>
+        </Slide>
     )
 }
 

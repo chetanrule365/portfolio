@@ -4,16 +4,21 @@ import './css/App.css';
 import AboutMe from './js/about_me';
 import ProjectCard from './js/project_card'
 import ProjectCard2 from './js/project_card2'
+import Fade from 'react-reveal/Fade';
+import Bounce from 'react-reveal/Bounce';
 
 function App() {
   return (
     <div className="App">
-      <div className="side_link"><p><a href="mailto:chetanrule365@gmail.com">chetanrule365@gmail.com</a></p><div className="side_line"></div></div>
-      <p style={{fontWeight:700}}>Hi! my name is</p>
-      <p className="my_name">N Chetan Chandra Sai Reddy</p>
-      <p className="my_prof">I build Web and Mobile Applications</p>
-      <p className="my_desc">I am a web and mobile app developer,<br/> specialized in React Js and Flutter frameworks.</p>
-      <a href="mailto:chetanrule365@gmail.com" className="button">Get in touch</a>
+      <div className="side_link"><Bounce><p><a href="mailto:chetanrule365@gmail.com">chetanrule365@gmail.com</a></p></Bounce><div className="side_line"></div></div>
+      <div className="my">
+        <img src={require('./assets/face.jpg')} alt=""/>
+        <Fade><p style={{fontWeight:700}}>Hi! my name is</p></Fade>
+        <Fade left delay={300}><p className="my_name">N Chetan Chandra Sai Reddy</p></Fade>
+        <Fade top cascade delay={500}><p className="my_prof">I build Web and Mobile Applications</p></Fade>
+        <Fade delay={700}><p className="my_desc">I am a web and mobile app developer,<br/> specialized in React Js and Flutter frameworks.</p></Fade>
+        <Fade delay={1000}><a href="mailto:chetanrule365@gmail.com" className="button">Get in touch</a></Fade>
+      </div>
       <AboutMe/>
       <div className="projects">
         <div className="title"><p>Some things I've built</p><div className="line"></div></div>
@@ -38,14 +43,20 @@ function App() {
       <div className="ending">
         <p className="end_title">Get in Touch</p>
         <p>I'm currently looking for new oppurtunities, my inbox is always open. Whether you have a question or just want to say hi, say hello!</p>
-        <a href="mailto:chetanrule365@gmail.com" className="button">Say Hello</a>
+        <a href="mailto:chetanrule365@gmail.com" style={{marginTop:"100px"}} className="button">Say Hello</a>
       </div>
       <div className="social">
         <div className="side_line"></div>
         <div className="social_links">
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/chetansaireddy/"><img src={require('./assets/instagram.png')} alt=""/></a>
+          <Bounce>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/chetansaireddy/"><img src={require('./assets/instagram.png')} alt=""/></a>
+          </Bounce>
+          <Bounce delay={300}>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/chetanrule123"><img src={require('./assets/github.jpg')} alt=""/></a>
+          </Bounce>
+          <Bounce delay={700}>
           <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/chetan-n-55338b180/"><img src={require('./assets/linkedin.png')} alt=""/></a>
+          </Bounce>
         </div>
       </div>
     </div>

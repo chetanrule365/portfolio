@@ -1,8 +1,12 @@
 import React from 'react'
 import '../css/App.css'
 import '../css/about_me.css'
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
+
 function about_me() {
     return (
+        <Fade>
         <div className="about_me_wrap">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
             <div className="content">
@@ -31,12 +35,15 @@ function about_me() {
                     </div>
                 </div>
             </div>
+            <Zoom>
             <div className="img_wrap">
                 <div className="dup">
 
                 </div>                
             </div>
+            </Zoom>
         </div>
+        </Fade>
     )
 }
 

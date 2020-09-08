@@ -1,8 +1,9 @@
 .about_me_wrap{
-    width: 100%;    
+    width: 100%;  
+    height: 100vh;  
     display: flex;
     justify-content: space-between;
-    margin: 100px 0;
+    align-items: center;
 }
 .about_me_wrap .content{
     width: 50%;
@@ -26,18 +27,18 @@
 }
 .about_me_wrap .img_wrap .dup{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
     left: 5px;
     top: 5px;
     border: 3px solid black;
     border-radius: 10px;
-    z-index: -1;
     transition: 0.5s;
+    z-index: -1;
 }
 .comp_lang{
     display: flex;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 .comp_lang i{
     color: rgb(176, 75, 255);
@@ -45,9 +46,13 @@
 .one,.two{
     margin-right: 20px;
 }
+.one p,.two p{
+    margin-bottom: 10px;
+}
 @media screen and (max-width:800px){
     .about_me_wrap{
         flex-direction: column;
+        justify-content: center;
     }
     .about_me_wrap .content{
         width: 100%;
