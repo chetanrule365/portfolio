@@ -23,22 +23,35 @@ function App() {
       <div className="projects">
         <div className="title"><p>Some things I've built</p><div className="line"></div></div>
         <ProjectCard 
-          title="Alumni" 
-          desc="A web app for gathering alumni of mechanical department students in JNTUACEP." 
-          img_path={require('./assets/Alumni.jpeg')}
-          tech_used={["HTML", "CSS", "PHP"]}
-          link="https://alumnimechjntuacep.in"/>
+          title="Android 11 Beta Replicate" 
+          desc="I dupliacted the Android 11 Beta page as a front-end assignment." 
+          img_path={require('./assets/android_replicate.png')}
+          tech_used={["HTML", "CSS","JavaScript"]}
+          link="https://chetanrule123.github.io/android11_web_page_replicate"/>
         <ProjectCard2
-          title="Music Streamer" 
-          desc="A web app for music streaming where artists can add their music albums, tracks and can stream online." 
-          img_path={require('./assets/Music-Streamer-App.jpeg')}
-          tech_used={["React Js", "Howler Js", "CSS"]}
-          link="https://music-streamer.netlify.app"/>
+          title="Image-editing-bootcamp Assignment" 
+          desc="A web app that helps instructors in the Image-editing-bootcamp for creating tasks and review submissions by the students." 
+          img_path={require('./assets/bootcamp.png')}
+          tech_used={["React Js"]}
+          link="https://chetanrule123.github.io/Image-editing-bootcamp"/>
         <ProjectCard
           title="Today ToDo App" 
           desc="A native app for managing all your todos and events, where you get scheduled notifications." 
-          img_path={require('./assets/merged.jpg')}
-          tech_used={["Flutter","Firebase"]}/>
+          img_path={require('./assets/today_todo_app.jpg')}
+          tech_used={["Flutter","Firebase"]}
+          link="https://play.google.com/store/apps/details?id=com.MyToDos.in"/>
+        <ProjectCard2
+          title="Music Streamer" 
+          desc="A web app for music streaming where artists can add their music albums, tracks and can stream online." 
+          img_path={require('./assets/music_streamer.png')}
+          tech_used={["React Js", "Howler Js", "CSS"]}
+          link="https://music-streamer.netlify.app"/>
+        <ProjectCard
+          title="Alumni" 
+          desc="A web app for gathering alumni of mechanical department students in JNTUACEP." 
+          img_path={require('./assets/alumni.png')}
+          tech_used={["HTML", "CSS","JavaScript", "PHP"]}
+          link="https://alumnimechjntuacep.in"/>
       </div>
       <div className="ending">
         <p className="end_title">Get in Touch</p>

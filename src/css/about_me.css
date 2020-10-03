@@ -1,9 +1,8 @@
 .about_me_wrap{
     width: 100%;  
-    height: 100vh;  
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 200px;
 }
 .about_me_wrap .content{
     width: 50%;
