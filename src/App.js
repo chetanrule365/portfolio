@@ -30,7 +30,7 @@ function App() {
           link="https://chetanrule123.github.io/android11_web_page_replicate"/>
         <ProjectCard2
           title="Image-editing-bootcamp Assignment" 
-          desc="A web app that helps instructors in the Image-editing-bootcamp for creating tasks and review submissions by the students." 
+          desc="A web app that helps instructors in the Image-editing-bootcamp for creating tasks and review submissions which are submitted by the students." 
           img_path={require('./assets/bootcamp.png')}
           tech_used={["React Js"]}
           link="https://chetanrule123.github.io/Image-editing-bootcamp"/>
