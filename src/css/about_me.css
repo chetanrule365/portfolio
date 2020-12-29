@@ -2,7 +2,7 @@
     width: 100%;  
     display: flex;
     justify-content: space-between;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 .about_me_wrap .content{
     width: 50%;
