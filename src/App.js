@@ -27,13 +27,13 @@ function App() {
           desc="I dupliacted the Android 11 Beta page as a front-end assignment." 
           img_path={require('./assets/android_replicate.png')}
           tech_used={["HTML", "CSS","JavaScript"]}
-          link="https://chetanrule123.github.io/android11_web_page_replicate"/>
+          link="https://chetanrule365.github.io/android11_web_page_replicate"/>
         <ProjectCard2
           title="Image-editing-bootcamp Assignment" 
           desc="A web app that helps instructors in the Image-editing-bootcamp for creating tasks and review submissions which are submitted by the students." 
           img_path={require('./assets/bootcamp.png')}
           tech_used={["React Js"]}
-          link="https://chetanrule123.github.io/Image-editing-bootcamp"/>
+          link="https://chetanrule365.github.io/Image-editing-bootcamp"/>
         <ProjectCard
           title="Today ToDo App" 
           desc="A native app for managing all your todos and events, where you get scheduled notifications." 
