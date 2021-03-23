@@ -135,7 +135,7 @@ function App() {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="https://github.com/chetanrule123"
+                            href="https://github.com/chetanrule365"
                         >
                             <img src={require("./assets/github.jpg")} alt="" />
                         </a>
