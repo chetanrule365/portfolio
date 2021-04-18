@@ -1,184 +1,177 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Rajdhani', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Rajdhani", sans-serif;
+    box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
-.App{
-  width: 70%;
-  margin: auto;
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+.App {
+    width: 70%;
+    margin: auto;
 }
-.my{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
+.my {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
 }
-.my img{
-  position: absolute;
-  top: 5%;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid rgb(176, 75, 255);
+.my_name {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 1.5;
+    color: rgb(176, 75, 255);
+    margin: 15px 0;
 }
-.my_name{
-  font-size: 60px;
-  font-weight: 700;
-  letter-spacing: 1.5;
-  color: rgb(176, 75, 255);
-  margin: 15px 0;
+.my_prof {
+    font-size: 50px;
+    font-weight: 700;
+    color: #6a6969;
+    letter-spacing: 1.5;
+    opacity: 0.6;
 }
-.my_prof{
-  font-size: 50px;
-  font-weight: 700;
-  color:#6A6969;
-  letter-spacing: 1.5;
-  opacity: 0.6;
+.my_desc {
+    margin: 50px 0 80px 0;
 }
-.my_desc{
-  margin: 50px 0 80px 0;
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 50px;
 }
-.title{
-  font-size: 30px;
-  font-weight: 700;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 50px;
+.title p {
+    margin-right: 20px;
 }
-.title p{
-  margin-right: 20px;
+.title .line {
+    background: black;
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    opacity: 0.3;
 }
-.title .line{
-  background: black;
-  width: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  opacity: 0.3;
+.side_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    position: fixed;
 }
-.side_link{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 50px;
-  bottom: 0;
-  position: fixed;
+.side_link a {
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    margin-bottom: 15px;
+    color: rgb(176, 75, 255);
+    transition: 0.5s;
 }
-.side_link a{
-  text-decoration: none;
-  writing-mode: vertical-rl;
-  margin-bottom: 15px;
-  color: rgb(176, 75, 255);
-  transition: 0.5s;
+.side_link a:hover {
+    transform: translateY(-8px);
 }
-.side_link a:hover{
-  transform: translateY(-8px);
+.side_line {
+    background: black;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
-.side_line{
-  background: black;
-  height: 150px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    position: fixed;
 }
-.social{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50px;
-  top: 0;
-  position: fixed;
+.social_links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
 }
-.social_links{
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
+.social_links img {
+    width: 20px;
+    margin: 5px;
+    transition: 0.3s;
 }
-.social_links img{
-  width: 20px;
-  margin: 5px;
-  transition: 0.3s;
+.social_links img:hover {
+    transform: scale(1.2);
 }
-.social_links img:hover{
-  transform: scale(1.2);
+.ending {
+    text-align: center;
+    width: 50%;
+    margin: 150px auto;
 }
-.ending{
-  text-align: center;
-  width: 50%;
-  margin: 150px auto;
+.ending .end_title {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 50px;
 }
-.ending .end_title{
-  font-size: 30px;
-  font-weight: 700;
-  margin: 50px;
+.ending button {
+    margin: 50px;
 }
-.ending button{
-  margin: 50px;
-}
-.button{
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
-  border: 2px solid rgb(176, 75, 255);
-  border-radius: 5px;
-  background: #BAFFAF;
-  padding: 15px 25px;
-  display: inline-flex;
+.button {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgb(176, 75, 255);
+    border-radius: 5px;
+    background: #baffaf;
+    padding: 15px 25px;
+    display: inline-flex;
 }
 
-@media screen and (max-width:800px){
-  .App{
-    width: 80%;
-  }
-  .social{
-    left: 10px;
-  }
-  .side_link{
-    right: 10px;
-  }
-  .title .line{
-    width: 200px;
-  }
-  .ending{
-    width: 70%;
-  }
+@media screen and (max-width: 800px) {
+    .App {
+        width: 80%;
+    }
+    .social {
+        left: 10px;
+    }
+    .side_link {
+        right: 10px;
+    }
+    .title .line {
+        width: 200px;
+    }
+    .ending {
+        width: 70%;
+    }
 }
-@media screen and (max-width:500px){
-  .App{
-    width: 90%;
-  }
-  .side_link,.side_line{
-    display: none;
-  }
-  .social{
-    position: sticky;
-    margin-bottom: 100px;
-  }
-  .social_links{
-    flex-direction: row;
-  }
-  .social_links img{
-    width: 25px;
-    margin: 20px;
-  }
-  .my_name{
-    font-size: 35px;
-  }
-  .my_prof{
-    font-size: 30px;
-  }
-  .title{
-    font-size: 20px;
-  }
-  .ending{
-    margin-bottom: 0px;
-  }
-  .ending .end_title{
-    font-size: 25px;
-  }
+@media screen and (max-width: 500px) {
+    .App {
+        width: 90%;
+    }
+    .side_link,
+    .side_line {
+        display: none;
+    }
+    .social {
+        position: sticky;
+        margin-bottom: 100px;
+    }
+    .social_links {
+        flex-direction: row;
+    }
+    .social_links img {
+        width: 25px;
+        margin: 20px;
+    }
+    .my_name {
+        font-size: 35px;
+    }
+    .my_prof {
+        font-size: 30px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .ending {
+        margin-bottom: 0px;
+    }
+    .ending .end_title {
+        font-size: 25px;
+    }
 }
