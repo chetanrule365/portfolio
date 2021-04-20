@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Rajdhani", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100vh;
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+@mixin flexBox($dir: row, $justify: center, $align: center) {
+    display: flex !important;
+    flex-direction: $dir !important;
+    justify-content: $justify !important;
+    align-items: $align !important;
+}
+@mixin glass-background($blur: 8px) {
+    background: rgba($color: #ffffff, $alpha: 0.7);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+}
+$primary: rgb(176, 75, 255);
+.App {
+    width: 70%;
+    margin: auto;
+    .my {
+        width: 100%;
+        position: relative;
+        padding-top: 100px;
+        min-height: 100vh;
+        @include flexBox(column, center, flex-start);
+        .my_name {
+            font-size: 60px;
+            font-weight: 700;
+            color: rgb(176, 75, 255);
+            margin: 15px 0;
+        }
+        .my_prof {
+            font-size: 50px;
+            font-weight: 700;
+            color: #6a6969;
+            opacity: 0.6;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .my_desc {
+            margin: 50px 0 80px 0;
+            font-weight: 500;
+            span {
+                color: $primary;
+                font-size: 18px;
+                font-weight: 600;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 50px;
+        p {
+            margin-right: 20px;
+        }
+        .line {
+            background: black;
+            width: 300px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            opacity: 0.3;
+        }
+    }
+    #experience {
+        padding-top: 100px;
+        span {
+            color: $primary;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    .side_link {
+        position: absolute;
+        right: 50px;
+        bottom: 0;
+        position: fixed;
+        @include flexBox(column);
+        a {
+            text-decoration: none;
+            writing-mode: vertical-rl;
+            margin-bottom: 15px;
+            color: rgb(176, 75, 255);
+            transition: 0.5s;
+            &:hover {
+                transform: translateY(-8px);
+            }
+        }
+    }
+    .side_line {
+        background: black;
+        height: 150px;
+        width: 3px;
+    }
+    #projects {
+        padding-top: 100px;
+    }
+    .social {
+        @include flexBox(column);
+        position: fixed;
+        left: 50px;
+        bottom: 0;
+        .social_links {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+            img {
+                width: 20px;
+                margin-top: 15px;
+                transition: 0.3s;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    #contact {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        padding: 100px 0 150px 0;
+        .end_title {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 50px;
+        }
+    }
+}
+.button {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgb(176, 75, 255);
+    border-radius: 5px;
+    background: #baffaf;
+    padding: 15px 25px;
+    display: inline-flex;
+}
+
+@media screen and (max-width: 800px) {
+    .App {
+        width: 80%;
+        .title {
+            .line {
+                width: 200px;
+            }
+        }
+        .my {
+            .my_name {
+                font-size: 50px;
+            }
+            .my_prof {
+                font-size: 45px;
+            }
+        }
+        .side_link,
+        .side_line {
+            display: none !important;
+        }
+        #contact {
+            padding-bottom: 50px;
+            width: 70%;
+        }
+        .social {
+            position: static;
+            padding-bottom: 80px;
+            .social_links {
+                flex-direction: row;
+                img {
+                    width: 25px;
+                    margin: 20px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .App {
+        width: 90%;
+        .my {
+            .my_name {
+                font-size: 35px;
+            }
+            .my_prof {
+                font-size: 30px;
+            }
+        }
+        .title {
+            font-size: 20px;
+        }
+        #contact {
+            .end_title {
+                font-size: 25px;
+            }
+        }
+    }
+}
+@import "../styles/about_me";
+@import "../styles/project_card";
+@import "../styles/project_card2";
+@import "../styles/menu";

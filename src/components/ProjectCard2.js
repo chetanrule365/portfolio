@@ -1,9 +1,8 @@
 import React from "react";
-import "../css/project_card2.css";
-import Slide from "react-reveal/Slide";
+import { Zoom } from "react-reveal";
 function ProjectCard2({ title, desc, img_path, tech_used, link }) {
     return (
-        <Slide right duration={500}>
+        <Zoom>
             <div className='project_card2'>
                 <div className='content'>
                     <p className='card_title'>{title}</p>
@@ -21,19 +20,20 @@ function ProjectCard2({ title, desc, img_path, tech_used, link }) {
                         rel='noopener noreferrer'
                         style={{
                             marginTop: "30px",
-                            color: "rgb(176,75,255)",
+                            color: "white",
                             fontSize: "20px",
                             textDecoration: "none",
                         }}>
                         <i className='fa fa-external-link'></i>&nbsp;visit
-                    </a>
+                        </a>
                 </div>
                 <div className='img_wrap'>
                     <img src={img_path} alt='' />
                     <div className='img_lay'></div>
                 </div>
             </div>
-        </Slide>
+
+        </Zoom>
     );
 }
 

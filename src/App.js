@@ -1,14 +1,16 @@
 import React from "react";
-import "./css/App.css";
+import "./styles/App.css";
 
-import AboutMe from "./js/AboutMe";
-import ProjectCard from "./js/ProjectCard";
-import ProjectCard2 from "./js/ProjectCard2";
+import AboutMe from "./components/AboutMe";
+import ProjectCard from "./components/ProjectCard";
+import ProjectCard2 from "./components/ProjectCard2";
 import { Fade, Bounce } from "react-reveal";
+import Menu from "./components/Menu";
 
 function App() {
     return (
         <div className='App'>
+            <Menu />
             <div className='side_link'>
                 <Bounce>
                     <p>
@@ -20,21 +22,29 @@ function App() {
                 <div className='side_line'></div>
             </div>
             <section className='my'>
-                <Fade>
+                <Fade delay={100}>
                     <p style={{ fontWeight: 700 }}>Hi! my name is</p>
                 </Fade>
-                <Fade left delay={300}>
+                <Fade top cascade delay={300}>
                     <h1 className='my_name'>N Chetan Chandra Sai Reddy</h1>
                 </Fade>
-                <Fade top cascade delay={500}>
+                <Fade delay={500}>
                     <h2 className='my_prof'>
                         I build Web and Mobile Applications
                     </h2>
                 </Fade>
                 <Fade delay={700}>
                     <p className='my_desc'>
-                        I am a web and mobile app developer,
-                        <br /> specialized in React Js and Ionic frameworks.
+                        I am a web and mobile app developer, specialized in
+                        <br /> React Js and Ionic frameworks.
+                        <br />I am currently working as a{" "}
+                        <span>Front-end developer</span> at{" "}
+                        <a
+                            href='http://www.truexam.in'
+                            target='_blank'
+                            rel='noopener noreferrer'>
+                            <span>Truexam.</span>
+                        </a>
                     </p>
                 </Fade>
                 <Fade delay={1000}>
@@ -44,21 +54,37 @@ function App() {
                 </Fade>
             </section>
             <AboutMe />
-            <section className='projects'>
+            <section id='experience'>
+                <div className='title'>
+                    <p>Where I've worked</p>
+                    <div className='line'></div>
+                </div>
+                <p style={{ margin: "30px 0" }}>
+                    I am currently working as a <span>Front-end developer</span>{" "}
+                    at{" "}
+                    <a
+                        href='http://www.truexam.in'
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        <span>Truexam</span>
+                    </a>
+                </p>
+            </section>
+            <section id='projects'>
                 <div className='title'>
                     <p>Some things I've built</p>
                     <div className='line'></div>
                 </div>
                 <ProjectCard
                     title='Front end work blog site.'
-                    desc='A hybrid app to learn frontend skills and to publish blogs.'
+                    desc='A hybrid app to learn skills and to publish blogs.'
                     img_path={require("./assets/few_blogsite.jpeg")}
                     tech_used={["Ionic", "React Js", "Firebase"]}
                     link='https://frontendwork.netlify.app/'
                 />
                 <ProjectCard2
                     title='Tindarr-game.'
-                    desc='A ionic app where it has swipable cards to play.'
+                    desc='An ionic app where it has swipable cards to play.'
                     img_path={require("./assets/tindarr-game.jpeg")}
                     tech_used={["Ionic", "React js"]}
                     link='https://tindarr-game.netlify.app/'
@@ -66,40 +92,40 @@ function App() {
                 <ProjectCard
                     title='Image-editing-bootcamp Assignment'
                     desc='A web app that helps instructors in the Image-editing-bootcamp for creating tasks and review submissions which are submitted by the students.'
-                    img_path={require("./assets/bootcamp.png")}
-                    tech_used={["React Js"]}
+                    img_path={require("./assets/bootcamp.jpeg")}
+                    tech_used={["React Js", "SCSS"]}
                     link='https://chetanrule365.github.io/Image-editing-bootcamp'
                 />
                 <ProjectCard2
                     title='Android 11 Beta Replicate'
-                    desc='I dupliacted the Android 11 Beta page as a front-end assignment.'
+                    desc='I dupliacted the Android 11 Beta page to text my CSS skills.'
                     img_path={require("./assets/android_replicate.png")}
                     tech_used={["HTML", "CSS", "JavaScript"]}
                     link='https://chetanrule365.github.io/android11_web_page_replicate'
                 />
                 <ProjectCard
                     title='Today ToDo App'
-                    desc='A native app for managing all your todos and events, where you get scheduled notifications.'
+                    desc='A native app for managing all your todos, events, and get scheduled notifications.'
                     img_path={require("./assets/today_todo_app.jpg")}
                     tech_used={["Flutter", "Firebase"]}
                     link='https://play.google.com/store/apps/details?id=com.MyToDos.in'
                 />
                 <ProjectCard2
                     title='Music Streamer'
-                    desc='A web app for music streaming where artists can add their music albums, tracks and can stream online.'
+                    desc="It's a music streaming web app to listen music online."
                     img_path={require("./assets/music_streamer.png")}
                     tech_used={["React Js", "Howler Js", "CSS"]}
                     link='https://music-streamer.netlify.app'
                 />
                 <ProjectCard
                     title='Alumni'
-                    desc='A web app for gathering alumni of mechanical department students in JNTUACEP.'
-                    img_path={require("./assets/alumni.png")}
+                    desc='A web app for alumni of mechanical department students in JNTUACEP.'
+                    img_path={require("./assets/alumni.jpeg")}
                     tech_used={["HTML", "CSS", "JavaScript", "PHP"]}
                     link='https://alumnimechjntuacep.in'
                 />
             </section>
-            <section className='ending'>
+            <section id='contact'>
                 <p className='end_title'>Get in Touch</p>
                 <p>
                     I'm currently looking for new oppurtunities, my inbox is
@@ -114,7 +140,6 @@ function App() {
                 </a>
             </section>
             <section className='social'>
-                <div className='side_line'></div>
                 <div className='social_links'>
                     <Bounce>
                         <a
@@ -147,6 +172,7 @@ function App() {
                         </a>
                     </Bounce>
                 </div>
+                <div className='side_line'></div>
             </section>
         </div>
     );

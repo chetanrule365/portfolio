@@ -1,0 +1,137 @@
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 6;
+    @include flexBox(row, space-between);
+    transition: 0.3s;
+    padding: 0 100px;
+    @include glass-background();
+    #svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        padding: 50px;
+        @keyframes back {
+            to {
+                position: static;
+                width: auto;
+                height: auto;
+                padding: 0;
+                background: transparent;
+            }
+        }
+        path {
+            stroke-dasharray: 150;
+            animation: write 3s forwards;
+            @keyframes write {
+                from {
+                    stroke-dashoffset: 150;
+                    fill: white;
+                }
+                to {
+                    stroke-dashoffset: 0;
+                    fill: $primary;
+                }
+            }
+        }
+    }
+    div {
+        @include flexBox(row);
+        a {
+            margin: 0 15px;
+            text-decoration: none;
+            button {
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 1.2px;
+                @include flexBox();
+                cursor: pointer;
+                span {
+                    color: rgb(176, 75, 255);
+                    margin-right: 5px;
+                }
+                &:hover {
+                    color: rgb(176, 75, 255);
+                }
+            }
+        }
+    }
+    #toggle-butt {
+        width: 40px;
+        height: 22px;
+        @include flexBox(column, space-between, flex-end);
+        span {
+            width: 100%;
+            display: block;
+            height: 3px;
+            border-radius: 5px;
+            background: $primary;
+            transition: 0.1s;
+            &:nth-child(2) {
+                width: 80%;
+            }
+            &:nth-child(3) {
+                width: 60%;
+            }
+        }
+        &.toggle {
+            span {
+                width: 100%;
+                &:nth-child(1) {
+                    transform: translateY(9.5px) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: translateY(-9.5px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+#sideMenu {
+    &.show {
+        transform: translateX(0);
+    }
+    transform: translateX(100vw);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 5;
+    @include flexBox(column);
+    @include glass-background();
+    transition: 0.3s;
+    a {
+        margin: 0 15px;
+        text-decoration: none;
+        button {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            @include flexBox(column);
+            cursor: pointer;
+            margin: 12px;
+            span {
+                color: rgb(176, 75, 255);
+                margin-right: 5px;
+            }
+            &:hover {
+                color: rgb(176, 75, 255);
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    #menu {
+        padding: 0 32px;
+    }
+}
