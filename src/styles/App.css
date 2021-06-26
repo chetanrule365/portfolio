@@ -451,6 +451,10 @@ button {
   margin-right: 15px;
 }
 
+.project_card .content a i, .project_card2 .content a i {
+  color: #b04bff;
+}
+
 .project_card .img_wrap, .project_card2 .img_wrap {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
@@ -630,7 +634,7 @@ button {
 }
 
 #menu #svg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
