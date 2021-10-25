@@ -33,10 +33,8 @@ function App() {
                     <p className="my_desc">
                         I am a web and mobile app developer, specialized in
                         <br /> React Js and Ionic frameworks.
-                        <br />I am currently working as a <span>Front-end developer</span> at{" "}
-                        <a href="http://www.truexam.in" target="_blank" rel="noopener noreferrer">
-                            <span>Truexam.</span>
-                        </a>
+                        <br /> 
+                        <br /> Currently open to work.
                     </p>
                 </Fade>
                 <Fade delay={1000}>
