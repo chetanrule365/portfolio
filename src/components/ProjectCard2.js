@@ -18,12 +18,6 @@ function ProjectCard2({ title, desc, img_path, tech_used, link }) {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                            marginTop: "30px",
-                            color: "white",
-                            fontSize: "20px",
-                            textDecoration: "none",
-                        }}
                     >
                         <i className="fa fa-external-link"></i>&nbsp;visit
                     </a>

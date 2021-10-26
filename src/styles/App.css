@@ -451,6 +451,13 @@ button {
   margin-right: 15px;
 }
 
+.project_card .content a, .project_card2 .content a {
+  color: #b04bff;
+  font-size: "20px";
+  text-decoration: none;
+  margin-top: 30px;
+}
+
 .project_card .content a i, .project_card2 .content a i {
   color: #b04bff;
 }
