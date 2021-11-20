@@ -51,8 +51,8 @@ function App() {
                 </div>
                 <p style={{ margin: "30px 0" }}>
                     I am currently working as a <span>Front-end developer</span> at{" "}
-                    <a href="http://www.truexam.in" target="_blank" rel="noopener noreferrer">
-                        <span>Truexam</span>
+                    <a href="https://www.koinearth.com/" target="_blank" rel="noopener noreferrer">
+                        <span>KoineArth</span>
                     </a>
                 </p>
             </section>
