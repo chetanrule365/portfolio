@@ -2,18 +2,10 @@ import React, { useEffect, useState } from "react";
 
 function Menu() {
   const [screenSize, setScreenSize] = useState(0);
-  var toggleButt;
-  var sideMenu;
-  var toggle = () => {};
-  useEffect(() => {
-    toggleButt = document.getElementById("toggle-butt");
-    sideMenu = document.getElementById("sideMenu");
-    toggle = () => {
-      document.getElementsByTagName("html")[0].classList.toggle("noscroll");
-      toggleButt.classList.toggle("toggle");
-      sideMenu.classList.toggle("show");
-    };
-  });
+  const [showSideMenu, setShowSideMenu] = useState(false);
+
+  const toggle = () => setShowSideMenu((prev) => !prev);
+
   useEffect(() => {
     setScreenSize(window.innerWidth);
     var scroll_Y = 0;
@@ -29,14 +21,8 @@ function Menu() {
     window.addEventListener("resize", () => {
       setScreenSize(window.innerWidth);
     });
-    toggleButt.onclick = () => toggle();
-    document.getElementsByTagName("html")[0].classList.toggle("noscroll");
-    setTimeout(() => {
-      let svg = document.getElementById("svg");
-      svg.style.animation = "back 3s forwards";
-      document.getElementsByTagName("html")[0].classList.toggle("noscroll");
-    }, 2000);
   }, []);
+
   return (
     <>
       <nav id="menu">
@@ -80,14 +66,18 @@ function Menu() {
             </a>
           </div>
         ) : (
-          <button id="toggle-butt">
+          <button
+            id="toggle-butt"
+            className={showSideMenu && "toggle"}
+            onClick={() => toggle()}
+          >
             <span></span>
             <span></span>
             <span></span>
           </button>
         )}
       </nav>
-      <nav id="sideMenu">
+      <nav id="sideMenu" className={showSideMenu && "show"}>
         <a href="#about">
           <button onClick={() => toggle()}>
             <span>01. </span> About
