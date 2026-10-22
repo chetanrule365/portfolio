@@ -17,7 +17,7 @@ const buttonClass =
 
 function App() {
   return (
-    <div className="mx-auto w-[90%] min-[501px]:w-4/5 min-[801px]:w-[70%]">
+    <div className="mx-auto w-[90%] max-w-5xl min-[501px]:w-4/5 min-[801px]:w-[70%]">
       <Menu />
 
       <div className="fixed bottom-0 right-[50px] hidden flex-col items-center justify-center min-[801px]:flex">
