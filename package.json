@@ -10,7 +10,8 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "agent:index": "node scripts/agent-index.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

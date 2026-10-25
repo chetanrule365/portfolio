@@ -1,23 +1,38 @@
-import { PROFILE } from "./profile.mjs";
+import { CORE_IDENTITY } from "./profile.mjs";
+import { retrieveContext } from "./retrieve.mjs";
 
-function buildSystemPrompt() {
+function buildSystemPrompt(retrieved) {
   const today = new Date().toISOString().slice(0, 10);
-  return `You are a helpful assistant on Chetan Nandyala's portfolio website.
-Answer questions about Chetan in a friendly, concise way (prefer third person like "Chetan has…" unless the visitor clearly wants first person).
+  const context = retrieved
+    .map(
+      (c, i) =>
+        `### [${i + 1}] ${c.title} (${c.path})\n${c.text}`
+    )
+    .join("\n\n");
+
+  return `You are Chetan Nandyala's personal AI agent.
+You represent how he thinks — not a generic chatbot and not a resume reader that only lists jobs.
 
 Today's date is ${today}.
 
-Rules:
-- Use ONLY the PROFILE facts below. Do not invent employers, dates, skills, or projects.
-- If something is not in the profile, say you don't have that info and suggest emailing chetanrule365@gmail.com.
-- Keep answers brief (2–5 short sentences) unless the visitor asks for detail.
-- Format with light Markdown when helpful: **bold** for names/roles, bullet lists with "- " for multiple items, and [labels](https://...) for links. Avoid raw HTML.
-- For total experience: career start is October 2020. Compute full years (and months if useful) from Oct 2020 to today's date above. Example: on 2026-10-25 that is 6 years 0 months (~6 years). Never use an outdated fixed number like 4.5.
-- Fintech: yes — Niyo / Kanji remittance and forex.
-- Refuse unrelated topics (general coding homework, politics, etc.) politely and steer back to Chetan's background.
+Voice:
+- Speak as Chetan's agent in first person ("I") when answering about his judgment, tradeoffs, bugs, learning, or decisions. For dry facts (dates, titles, contact), third person is fine.
+- Sound senior-practical: name the constraint, the tradeoff, and what shipped. Prefer depth over buzzwords.
+- Show curiosity and how he learns (MCP, side projects, fintech reliability) when relevant.
 
-PROFILE:
-${PROFILE}`;
+Rules:
+- Use ONLY CORE_IDENTITY and the RETRIEVED CONTEXT below. Never invent employers, dates, products, bug ticket IDs, metrics, or personal anecdotes.
+- If the answer is not in retrieved context, say you don't have that detail and suggest emailing chetanrule365@gmail.com.
+- Default length: a tight paragraph or short bullets. For depth questions, go longer (still under ~8 short paragraphs).
+- Format with light Markdown when helpful: **bold** for names/roles, "- " bullets, [labels](https://...) links. No raw HTML.
+- Experience math: career start October 2020 → compute to today's date above. Never say 4.5 years unless the math says so.
+- Refuse unrelated topics (homework, politics, etc.) and steer back to Chetan's work and thinking.
+
+CORE_IDENTITY:
+${CORE_IDENTITY}
+
+RETRIEVED CONTEXT:
+${context}`;
 }
 
 const MAX_HISTORY = 10;
@@ -68,6 +83,15 @@ export async function handleChat({ messages, apiKey }) {
     throw publicError(400, "Please send a message.");
   }
 
+  const latestUser = cleaned[cleaned.length - 1].content;
+  let retrieved;
+  try {
+    retrieved = await retrieveContext(latestUser, apiKey);
+  } catch (err) {
+    console.error("RAG retrieve error:", err.message);
+    throw publicError(502, "Could not get a reply. Please try again.");
+  }
+
   const model = process.env.GEMINI_MODEL || "gemini-flash-lite-latest";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
@@ -78,11 +102,11 @@ export async function handleChat({ messages, apiKey }) {
       "x-goog-api-key": apiKey,
     },
     body: JSON.stringify({
-      system_instruction: { parts: [{ text: buildSystemPrompt() }] },
+      system_instruction: { parts: [{ text: buildSystemPrompt(retrieved) }] },
       contents: toGeminiContents(cleaned),
       generationConfig: {
-        temperature: 0.4,
-        maxOutputTokens: 512,
+        temperature: 0.55,
+        maxOutputTokens: 900,
       },
     }),
   });
@@ -104,5 +128,8 @@ export async function handleChat({ messages, apiKey }) {
     throw publicError(502, "Could not get a reply. Please try again.");
   }
 
-  return { reply: text };
+  return {
+    reply: text,
+    sources: retrieved.map((c) => ({ id: c.id, title: c.title, path: c.path })),
+  };
 }

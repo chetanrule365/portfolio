@@ -1,3 +1,11 @@
-# Chetan profile (source of truth for the chatbot lives in `netlify/functions/_shared/profile.mjs`)
+# Chetan profile
 
-This markdown is a human-readable mirror. Update `profile.mjs` when facts change — that file is what Gemini receives.
+Chatbot knowledge source of truth: `agent/knowledge/*.md`
+
+Rebuild the RAG index after edits:
+
+```bash
+npm run agent:index
+```
+
+That writes `netlify/functions/_shared/knowledge-index.json` (commit it with knowledge changes).

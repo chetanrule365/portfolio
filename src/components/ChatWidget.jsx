@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import MessageContent from "./MessageContent";
 
 const SUGGESTIONS = [
-  "How much total work experience does Chetan have?",
-  "Has Chetan worked in fintech?",
-  "What did Chetan build at Niyo?",
+  "What’s the hardest bug you’ve ever tracked down?",
+  "What’s a technical decision you’d make differently today?",
+  "What are you learning right now, and why?",
 ];
 
 const WELCOME =
-  "I'm Chetan's portfolio agent. Ask about his experience, stack, companies, or projects — I'll answer from his profile.";
+  "I'm Chetan's personal agent — grounded in his work, projects, and how he thinks. Ask about tradeoffs, bugs he's chased, what he's learning, or what he's shipped.";
 
 const font =
   "font-['Instrument_Sans',ui-sans-serif,system-ui,sans-serif]";
