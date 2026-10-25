@@ -57,9 +57,30 @@ function App() {
           </p>
         </Fade>
         <Fade delay={1000}>
-          <a href="mailto:chetanrule365@gmail.com" className={buttonClass}>
-            Get in touch
-          </a>
+          <button
+            type="button"
+            onClick={() =>
+              window.dispatchEvent(new Event("open-chetan-agent"))
+            }
+            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 px-6 py-3.5 font-['Instrument_Sans',ui-sans-serif,system-ui,sans-serif] text-[15px] font-semibold text-white shadow-[0_12px_40px_rgba(34,211,238,0.22)] transition hover:scale-[1.02] hover:border-cyan-400/30 hover:shadow-[0_16px_48px_rgba(99,102,241,0.28)]"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-sky-500/10 to-indigo-500/25 opacity-80 transition group-hover:opacity-100" />
+            <span className="absolute -left-8 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-cyan-400/30 blur-2xl transition group-hover:bg-cyan-400/45" />
+            <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-sky-500 to-indigo-600 text-[10px] font-bold tracking-wide text-white shadow-lg shadow-cyan-500/30">
+              CN
+            </span>
+            <span className="relative tracking-tight">Talk to Chetan Agent</span>
+            <svg
+              className="relative h-4 w-4 text-cyan-300 transition group-hover:translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
         </Fade>
       </section>
 
