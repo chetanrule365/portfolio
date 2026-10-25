@@ -8,10 +8,11 @@ export const PROFILE = `
 - Website: www.chetanchandrasaireddy.in
 - GitHub: chetanrule365
 - LinkedIn: chetanrule365
-- Total professional experience: ~4.5+ years, starting October 2020 (Truexam) through present (Niyo as of 2025–2026).
+- Career start: October 2020 (Truexam). Still working (Niyo).
+- Total professional experience: compute from October 2020 to today's date (as of Oct 2026 that is about 6 years). Do NOT say 4.5 years unless that matches the math for the current date.
 
 ## Summary
-Frontend Engineer with 4.5+ years building scalable web apps, hybrid apps, and micro-frontend architectures across high-growth startups, SaaS, and fintech platforms using React.js, Next.js, and TypeScript. Uses Model Context Protocol (MCP) workflows (Figma, Atlassian, Playwright) and modern AI tools to accelerate development. Focus on web performance, modular UI systems, and user-centric solutions in agile teams.
+Frontend Engineer with experience since October 2020 building scalable web apps, hybrid apps, and micro-frontend architectures across high-growth startups, SaaS, and fintech platforms using React.js, Next.js, and TypeScript. Uses Model Context Protocol (MCP) workflows (Figma, Atlassian, Playwright) and modern AI tools to accelerate development. Focus on web performance, modular UI systems, and user-centric solutions in agile teams.
 
 ## Work experience
 
@@ -79,7 +80,7 @@ Frontend Engineer with 4.5+ years building scalable web apps, hybrid apps, and m
 - Front-End Web Developer Nanodegree (Udacity), June 2019 – Present
 
 ## Quick facts for common questions
-- Total experience: about 4.5+ years (Oct 2020 → present).
+- Total experience: from Oct 2020 to present — calculate years/months from that start date to today (~6 years as of October 2026).
 - Fintech experience: Yes — currently at Niyo on Kanji remittance PWA and forex cash portal.
 - Current company: Niyo (SDE2 Frontend Engineer).
 - Strongest stack: React, Next.js, TypeScript, Tailwind, micro-frontends (single-spa).

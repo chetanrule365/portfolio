@@ -23,11 +23,11 @@ function AboutMe() {
         <div className="w-full min-w-0 flex-1">
           <SectionTitle>About&nbsp;Me</SectionTitle>
           <p className="leading-relaxed">
-            I'm a Frontend Engineer with 4.5+ years building scalable web apps,
-            hybrid apps, and micro-frontends across startups, SaaS, and fintech —
-            mostly with React, Next.js, and TypeScript. I care about performance,
-            modular UI systems, and shipping user-centric product in fast-paced
-            teams.
+            I'm a Frontend Engineer with ~6 years of experience (since Oct 2020)
+            building scalable web apps, hybrid apps, and micro-frontends across
+            startups, SaaS, and fintech — mostly with React, Next.js, and
+            TypeScript. I care about performance, modular UI systems, and
+            shipping user-centric product in fast-paced teams.
           </p>
           <p className="mt-4 leading-relaxed">
             Lately I've been leaning into MCP workflows and AI-assisted

@@ -1,18 +1,23 @@
 import { PROFILE } from "./profile.mjs";
 
-const SYSTEM_PROMPT = `You are a helpful assistant on Chetan Nandyala's portfolio website.
-Answer questions about Chetan in a friendly, concise, first-person-or-third-person mix that feels natural (prefer third person like "Chetan has…" or "He…", or "I" only if the visitor clearly wants Chetan speaking — default to clear third person about Chetan).
+function buildSystemPrompt() {
+  const today = new Date().toISOString().slice(0, 10);
+  return `You are a helpful assistant on Chetan Nandyala's portfolio website.
+Answer questions about Chetan in a friendly, concise way (prefer third person like "Chetan has…" unless the visitor clearly wants first person).
+
+Today's date is ${today}.
 
 Rules:
 - Use ONLY the PROFILE facts below. Do not invent employers, dates, skills, or projects.
 - If something is not in the profile, say you don't have that info and suggest emailing chetanrule365@gmail.com.
 - Keep answers brief (2–5 short sentences) unless the visitor asks for detail.
-- For total experience: he started in Oct 2020; say ~4.5+ years (or compute from that start to "today").
+- For total experience: career start is October 2020. Compute full years (and months if useful) from Oct 2020 to today's date above. Example: on 2026-10-25 that is 6 years 0 months (~6 years). Never use an outdated fixed number like 4.5.
 - Fintech: yes — Niyo / Kanji remittance and forex.
 - Refuse unrelated topics (general coding homework, politics, etc.) politely and steer back to Chetan's background.
 
 PROFILE:
 ${PROFILE}`;
+}
 
 const MAX_HISTORY = 10;
 const MAX_MESSAGE_CHARS = 500;
@@ -72,7 +77,7 @@ export async function handleChat({ messages, apiKey }) {
       "x-goog-api-key": apiKey,
     },
     body: JSON.stringify({
-      system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+      system_instruction: { parts: [{ text: buildSystemPrompt() }] },
       contents: toGeminiContents(cleaned),
       generationConfig: {
         temperature: 0.4,
