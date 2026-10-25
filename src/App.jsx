@@ -1,4 +1,5 @@
 import AboutMe from "./components/AboutMe";
+import ChatWidget from "./components/ChatWidget";
 import Experience from "./components/Experience";
 import ProjectCard from "./components/ProjectCard";
 import SectionTitle from "./components/SectionTitle";
@@ -17,6 +18,7 @@ const buttonClass =
 
 function App() {
   return (
+    <>
     <div className="mx-auto w-[90%] max-w-5xl min-[501px]:w-4/5 min-[801px]:w-[70%]">
       <Menu />
 
@@ -156,6 +158,8 @@ function App() {
         <div className="hidden h-[150px] w-[3px] bg-black min-[801px]:block" />
       </section>
     </div>
+    <ChatWidget />
+    </>
   );
 }
 
