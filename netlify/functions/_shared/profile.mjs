@@ -5,7 +5,7 @@ export const PROFILE = `
 - Role: Frontend Engineer
 - Location: Bengaluru, Karnataka, India
 - Email: chetanrule365@gmail.com
-- Website: www.chetanchandrasaireddy.in
+- Website: https://chetanchandrasaireddy.netlify.app/
 - GitHub: chetanrule365
 - LinkedIn: chetanrule365
 - Career start: October 2020 (Truexam). Still working (Niyo).
