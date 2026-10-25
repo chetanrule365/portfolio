@@ -2,7 +2,7 @@ import { handleChat } from "./_shared/chat-handler.mjs";
 
 const ALLOWED_ORIGINS = (
   process.env.CHAT_ALLOWED_ORIGINS ||
-  "https://www.chetanchandrasaireddy.in,https://chetanchandrasaireddy.in,http://localhost:5173,http://127.0.0.1:5173"
+  "https://www.chetanchandrasaireddy.in,https://chetanchandrasaireddy.in,https://chetanchandrasaireddy.netlify.app,http://localhost:5173,http://127.0.0.1:5173"
 )
   .split(",")
   .map((o) => o.trim())
