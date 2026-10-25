@@ -62,7 +62,7 @@ export async function handleChat({ messages, apiKey }) {
     throw publicError(400, "Please send a message.");
   }
 
-  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL || "gemini-flash-lite-latest";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
   const response = await fetch(url, {
