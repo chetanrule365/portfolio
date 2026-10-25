@@ -1,28 +1,10 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import knowledgeIndex from "./knowledge-index.json" with { type: "json" };
 import { cosineSimilarity, embedText } from "./embeddings.mjs";
 
 const TOP_K = 5;
 const ALWAYS_INCLUDE = new Set(["basics", "voice"]);
 
-const indexPath = path.join(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "knowledge-index.json"
-);
-
-function loadIndex() {
-  try {
-    return JSON.parse(readFileSync(indexPath, "utf8"));
-  } catch {
-    throw new Error(
-      "knowledge-index.json missing. Run: npm run agent:index"
-    );
-  }
-}
-
 export async function retrieveContext(query, apiKey) {
-  const knowledgeIndex = loadIndex();
   if (!knowledgeIndex?.chunks?.length) {
     throw new Error("Knowledge index is empty. Run: npm run agent:index");
   }
